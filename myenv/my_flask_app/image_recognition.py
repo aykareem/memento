@@ -35,12 +35,12 @@ def download_image_from_url(url):
     N, C, H, W = input_layer.shape
     resized_image = cv2.resize(image, (W, H))
     input_image = np.expand_dims(resized_image.transpose(2,0,1),0)
-    return input_image, width, height
+    return input_image, width, height, image
 
 # Correctly resize and reshape the image
 # Detect faces with OpenVINO
 def detect_faces(image_url, compiled_model):
-    image, width, height= download_image_from_url(image_url)
+    image, width, height, blank= download_image_from_url(image_url)
     THRESH = 0.3
     boxes = compiled_model([image])[output_layer_ir]
     boxes=boxes.squeeze()[:,-5:]
@@ -52,36 +52,39 @@ def detect_faces(image_url, compiled_model):
 
 # Detect and compare two faces
 def detect_and_compare_faces(image_url1, image_url2, fd_compiled_model, fr_compiled_model):
-    # Download and preprocess the images
-    image1, width1, height1 = download_image_from_url(image_url1)
-    image2, width2, height2 = download_image_from_url(image_url2)
-
+    new_image1, width1, height1, image1 = download_image_from_url(image_url1)
+    new_image2, width2, height2, image2 = download_image_from_url(image_url2)
     # Detect faces in both images
-    face1_box = detect_faces(image_url1, fd_compiled_model)
-    face2_box = detect_faces(image_url2, fd_compiled_model)
+    face1_box = detect_faces(image_url1, face_detection_compiled_model)
+    face2_box = detect_faces(image_url2, face_detection_compiled_model)
 
     # Extract coordinates for cropping
     x1, y1, x2, y2 = face1_box.astype(int)
     x3, y3, x4, y4 = face2_box.astype(int)
 
-    # Crop the faces from the images, ensuring correct dimension handling
-    # Since these are color images, assume 3D with (Height, Width, Channels)
-    cropped_face1 = image1[:, y1:y2, x1:x2]  # (Height, Width, Channels)
-    cropped_face2 = image2[:, y3:y4, x3:x4]  # (Height, Width, Channels)
+    # Crop the faces from the images
+    face1 = image1[y1:y2, x1:x2]  # Adjusted shape for OpenVINO model input
+    face2 = image2[y3:y4, x3:x4]  # Adjusted shape for OpenVINO model input
+    print(face1.size)
+    print(face2.size)
 
-    # Adjusting for OpenVINO input requirements (needs batch size)
-    batch_cropped_face1 = np.expand_dims(cropped_face1.transpose(2, 0, 1), axis=0)
-    batch_cropped_face2 = np.expand_dims(cropped_face2.transpose(2, 0, 1), axis=0)
+    # Resize the faces to 128x128
+    resized_face1 = cv2.resize(face1, (128, 128))
+    resized_face2 = cv2.resize(face2, (128, 128))
+    
 
-    # Generate face embeddings with reidentification model
-    embedding1 = fr_compiled_model([batch_cropped_face1])[0]
-    embedding2 = fr_compiled_model([batch_cropped_face2])[0]
+    # Add a batch dimension and transpose to match expected shape
+    tensor_face1 = np.expand_dims(resized_face1.transpose(2, 0, 1), axis=0)
+    tensor_face2 = np.expand_dims(resized_face2.transpose(2, 0, 1), axis=0)
 
-    # Calculate similarity
+
+    embedding1 = fr_compiled_model([tensor_face1])[0]
+    embedding2 = fr_compiled_model([tensor_face2])[0]
+
     similarity = 1 - cosine(embedding1.flatten(), embedding2.flatten())
 
-    return similarity
 
+    return similarity
 
 
 
@@ -90,10 +93,11 @@ def detect_and_compare_faces(image_url1, image_url2, fd_compiled_model, fr_compi
 # Test with image URLs
 matching_score = detect_and_compare_faces(
     "https://m.media-amazon.com/images/M/MV5BZjhkMzgzZGEtYjQ1Yi00NWUxLTk5NWMtNWY5MThjODRlMDczXkEyXkFqcGdeQXVyMTExNzQ3MzAw._V1_.jpg",
-    "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png",
+    "https://m.media-amazon.com/images/M/MV5BODdmMTE4OWEtMWM0ZC00MDRlLWE4YjYtYWI3ZGEyZmU5MGE3XkEyXkFqcGdeQXVyMTMyNzI3NzIy._V1_.jpg",
     face_detection_compiled_model,
     face_reid_compiled_model
 )
+print("matching score is", matching_score)
 
 # print(f"Matching score between the two faces: {matching_score}")
 image = download_image_from_url("https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png")
