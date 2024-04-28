@@ -1,4 +1,4 @@
-#!/Users/raramand/Desktop/memento/myenv/bin/python3.12
+#!/Users/raramand/Desktop/memento/myenv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys
