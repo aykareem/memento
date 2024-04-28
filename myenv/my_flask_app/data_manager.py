@@ -22,8 +22,8 @@ def add_profile(name: str, relation: str, picture: str):
 def match(image: str):
     if(len(profiles) == 0):
         print("No profiles")
-    maxperson = profiles[0]
-    max = ir.detect_and_compare_faces(image, profiles[0].picture)
+    maxperson = None
+    max = 0.15
     for person in profiles:
         matching_score = ir.detect_and_compare_faces(image, person.picture)
         if(matching_score > max):
