@@ -5,20 +5,37 @@ struct ContentView: View {
     @State private var isCameraPresented = false
 
     var body: some View {
-        VStack {
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
+        NavigationView {
+            VStack(spacing: 20) {
+                if let image = image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                }
+                Button("Open Camera") {
+                    isCameraPresented = true
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+
+                NavigationLink("Add Contact", destination: AddContactView())
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+
+                NavigationLink("View Contacts", destination: ContactsListView())
+                    .padding()
+                    .background(Color.orange)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
             }
-            Button("Open Camera") {
-                isCameraPresented = true
+            .sheet(isPresented: $isCameraPresented) {
+                CameraView(image: $image)
             }
-        }
-        .sheet(isPresented: $isCameraPresented) {
-            CameraView(image: $image)
+            .navigationTitle("Home")
         }
     }
 }
-
-
