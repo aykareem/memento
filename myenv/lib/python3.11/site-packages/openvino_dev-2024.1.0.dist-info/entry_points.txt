@@ -1,0 +1,6 @@
+[console_scripts]
+mo = openvino.tools.mo.__main__:main
+omz_converter = omz_tools.omz_converter:main
+omz_data_downloader = omz_tools.omz_data_downloader:main
+omz_downloader = omz_tools.omz_downloader:main
+omz_info_dumper = omz_tools.omz_info_dumper:main

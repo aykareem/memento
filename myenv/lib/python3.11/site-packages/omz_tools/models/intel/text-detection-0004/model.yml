@@ -1,0 +1,40 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  Detects oriented text.
+task_type: detection
+files:
+  - name: FP32/text-detection-0004.xml
+    size: 308633
+    checksum: ddeaff0916443a41b8a6a11f87fd6541ed63fd9e3b0c8a7e7ee00f1945126b158b6fe5697010604d304059ff960f0715
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-detection-0004/FP32/text-detection-0004.xml
+  - name: FP32/text-detection-0004.bin
+    size: 17503964
+    checksum: f3b775c0bb1c4238b3c785f571d10df76fcc072a6c40c6378f76692875f57fadda345b7509d86ff2cf0cba16e4fa1fab
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-detection-0004/FP32/text-detection-0004.bin
+  - name: FP16/text-detection-0004.xml
+    size: 436762
+    checksum: 1c368ccccbf138f8b87f88dea5a86c894d86fc6419c14ff0dffce44fb1ba5c16385266a758adfc10c34e614df1e44283
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-detection-0004/FP16/text-detection-0004.xml
+  - name: FP16/text-detection-0004.bin
+    size: 8751930
+    checksum: 08a3704e260e60b5a56e50a2a45e4851378deab04d715d9d38c3c7c90cff2bd3d7af1c679311b59fb8cd4b0792a699b5
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-detection-0004/FP16/text-detection-0004.bin
+input_info:
+  - name: Placeholder
+    shape: [1, 768, 1280, 3]
+    layout: NHWC
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE

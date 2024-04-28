@@ -1,0 +1,50 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  Multiclass (person -  vehicle -  non-vehicle) detector based on SSD detection architecture
+  -  RMNet backbone and learnable image downscale block (person-vehicle-bike-detection-crossroad-0066
+  with extra pooling)
+task_type: detection
+files:
+  - name: FP32/person-vehicle-bike-detection-crossroad-0078.xml
+    size: 381113
+    checksum: 8ad88cf47daa864c04082eb0f07e842c9421b1431c0d084680f559952dd73f507831cf62426928351e1bfd3d1adaab6d
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml
+  - name: FP32/person-vehicle-bike-detection-crossroad-0078.bin
+    size: 4713980
+    checksum: 3b95ab2af75937fd5e9bf95963cf0fd13f39ca8de5f41f0417a78763cdc8d4183a3ffb3a0a617cdd859a2c996911f381
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.bin
+  - name: FP16/person-vehicle-bike-detection-crossroad-0078.xml
+    size: 526260
+    checksum: 7997f14109662b3d422ee5b9c7a812690eb00227b17e366ab6098fb5924a9a8c5077b326e3dcc3d2e2cbce91797bab4d
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-crossroad-0078/FP16/person-vehicle-bike-detection-crossroad-0078.xml
+  - name: FP16/person-vehicle-bike-detection-crossroad-0078.bin
+    size: 2357042
+    checksum: 9fa3031c27af7e934a61ff02a01820d990b257a21ea0f9e195d79941fcbe97fac9c731bd404bd0c8dddfa4c1e1937cb4
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-crossroad-0078/FP16/person-vehicle-bike-detection-crossroad-0078.bin
+  - name: FP16-INT8/person-vehicle-bike-detection-crossroad-0078.xml
+    size: 1036007
+    checksum: 2b514396d60dc97a5e7bf2c271fecebd7e8d8f06afe4ab767b51d89999ce645ac8e4aeab01cbb89ff97cf0fecb811fe9
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-crossroad-0078/FP16-INT8/person-vehicle-bike-detection-crossroad-0078.xml
+  - name: FP16-INT8/person-vehicle-bike-detection-crossroad-0078.bin
+    size: 1234393
+    checksum: 273b3c18a22320245398311f0f3e32e188840a7923cf5d717a020d0b71967e96c35f7c3a8212df59ddd42cfd1871262f
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-crossroad-0078/FP16-INT8/person-vehicle-bike-detection-crossroad-0078.bin
+input_info:
+  - name: data
+    shape: [1, 3, 1024, 1024]
+    layout: NCHW
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE

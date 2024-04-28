@@ -1,0 +1,48 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  ICNet trained on CamVid in TensorFlow with 30% weight sparsity (70.08% mIoU)
+task_type: semantic_segmentation
+files:
+  - name: FP32/icnet-camvid-ava-sparse-30-0001.xml
+    size: 482517
+    checksum: f3337e4bbae7058fe0d63f60d9930e429a136f3eaab6b4bc05361aac1b1e3ed63ea54c1931e6ea58360380567ceb3ddd
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/icnet-camvid-ava-sparse-30-0001/FP32/icnet-camvid-ava-sparse-30-0001.xml
+  - name: FP32/icnet-camvid-ava-sparse-30-0001.bin
+    size: 107029868
+    checksum: a8433aeb199a9f86fa171e707e0a4e32c43bef7d33b6379f99342c329019e7e5d06ec34472b657c218c929c0d79ccbd0
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/icnet-camvid-ava-sparse-30-0001/FP32/icnet-camvid-ava-sparse-30-0001.bin
+  - name: FP16/icnet-camvid-ava-sparse-30-0001.xml
+    size: 628975
+    checksum: f1d8eb0705ef1089fbb8ec83594f25f0698e7053c58fc04d440caa55e0b4b982b32bd4d9d914f3856a1952f72135ee0d
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/icnet-camvid-ava-sparse-30-0001/FP16/icnet-camvid-ava-sparse-30-0001.xml
+  - name: FP16/icnet-camvid-ava-sparse-30-0001.bin
+    size: 53514054
+    checksum: 55669445cfdd43304d7e3dd9f8f575ba4faed87e59f6b54ac4e0c4b322274691f09471d46bb935543cfcf61c083dfeb4
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/icnet-camvid-ava-sparse-30-0001/FP16/icnet-camvid-ava-sparse-30-0001.bin
+  - name: FP16-INT8/icnet-camvid-ava-sparse-30-0001.xml
+    size: 714675
+    checksum: cbf0f2a44c5489dc896d7cb1665f461d3240164f806e6b582a186e9173366406373f03557b9ccd4851977ac450723821
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2022.3/models_bin/1/icnet-camvid-ava-sparse-30-0001/FP16-INT8/icnet-camvid-ava-sparse-30-0001.xml
+  - name: FP16-INT8/icnet-camvid-ava-sparse-30-0001.bin
+    size: 26847742
+    checksum: 384c5f04f5f3507ea408ad2eb0472189d2eeeeac1f814611bf189631817f281f6959ae05ce1f9a4cc1e706938cf111da
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2022.3/models_bin/1/icnet-camvid-ava-sparse-30-0001/FP16-INT8/icnet-camvid-ava-sparse-30-0001.bin
+input_info:
+  - name: data
+    shape: [1, 720, 960, 3]
+    layout: NHWC
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE

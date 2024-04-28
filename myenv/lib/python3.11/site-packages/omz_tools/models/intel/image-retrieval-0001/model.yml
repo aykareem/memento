@@ -1,0 +1,41 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  An image retrieval model based on Mobilenet v2 as a backbone. The model produces
+  l2-normalized embeddings with dimension equals to 256.
+task_type: object_attributes
+files:
+  - name: FP32/image-retrieval-0001.xml
+    size: 246012
+    checksum: f45473638c810e1ac2bfe4f87e2bea1a8862f465a5ddbe5d251b437d7435844773f43fd4e85745c24605e2c4c430ac76
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/image-retrieval-0001/FP32/image-retrieval-0001.xml
+  - name: FP32/image-retrieval-0001.bin
+    size: 10275620
+    checksum: c250186cdcc974ae4ca510b51923b723fd840f800a5db9311857478009ef45173292f200e007c19447602aa9f0756888
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/image-retrieval-0001/FP32/image-retrieval-0001.bin
+  - name: FP16/image-retrieval-0001.xml
+    size: 367135
+    checksum: d968f826ed6c3ba7751d490a3443054fdca9a2447946ab8ef4807ecc7a249424795ef200cc342cf7eb42d841232409d5
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/image-retrieval-0001/FP16/image-retrieval-0001.xml
+  - name: FP16/image-retrieval-0001.bin
+    size: 5137882
+    checksum: 61ea93bb44c9532ee1b51d40d9861d1f92a668dc61ab2b867fcdc581f582cce11c56087cd3b381a59dd7e2c7072f252a
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/image-retrieval-0001/FP16/image-retrieval-0001.bin
+input_info:
+  - name: Placeholder
+    shape: [1, 224, 224, 3]
+    layout: NHWC
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE

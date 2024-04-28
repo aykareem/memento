@@ -1,0 +1,49 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  General-purpose action recognition model for Kinetics-400 dataset based on Video
+  Transformer Network approach. Decoder part
+task_type: action_recognition
+files:
+  - name: FP32/action-recognition-0001-decoder.xml
+    size: 172278
+    checksum: 92e2f481146ed2d5df2d4968357bd8cb715e28e9b70b018b4264df9c895543a0ef34dacb2f353e4f0938b638f1edd0ef
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/action-recognition-0001/action-recognition-0001-decoder/FP32/action-recognition-0001-decoder.xml
+  - name: FP32/action-recognition-0001-decoder.bin
+    size: 30238492
+    checksum: 62070f77ac8f9ec2e8b807fec4d22546e40253ab9d2f428844ac226753887ad089e4a2501e65486566e87492f7888f53
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/action-recognition-0001/action-recognition-0001-decoder/FP32/action-recognition-0001-decoder.bin
+  - name: FP16/action-recognition-0001-decoder.xml
+    size: 190650
+    checksum: a66dcdb8efa8ab5ab0231cfe92fd5c39fc8849cc3abdd495f889bdae738b2f3d504becbc64f06434909a6eb0cb7b234e
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/action-recognition-0001/action-recognition-0001-decoder/FP16/action-recognition-0001-decoder.xml
+  - name: FP16/action-recognition-0001-decoder.bin
+    size: 15119354
+    checksum: 5ab91a287b80af26ca34be6014e41f74441f842206760d1372ede295e350fc27a32b059304a4fe06b288ab7c35e66b37
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/action-recognition-0001/action-recognition-0001-decoder/FP16/action-recognition-0001-decoder.bin
+  - name: FP16-INT8/action-recognition-0001-decoder.xml
+    size: 276509
+    checksum: b03ba339cbbec1c7b44adfa6ab1092208f6525a8a620eff32bb96f5ecf5d27f7a9b4aae0e62404241b769b425e3fe438
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/action-recognition-0001/action-recognition-0001-decoder/FP16-INT8/action-recognition-0001-decoder.xml
+  - name: FP16-INT8/action-recognition-0001-decoder.bin
+    size: 7601377
+    checksum: 0642f7c6de528c7c9c1de47c29cf55bdc5566f671cd1aa179dcd8735cfeea8802d87001fbfd783f37913b4d9b6391d06
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/action-recognition-0001/action-recognition-0001-decoder/FP16-INT8/action-recognition-0001-decoder.bin
+input_info:
+  - name: '0'
+    shape: [1, 16, 512]
+    layout: NDC
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE

@@ -1,0 +1,48 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  Super resolution model
+task_type: image_processing
+files:
+  - name: FP32/text-image-super-resolution-0001.xml
+    size: 10400
+    checksum: 7b1bb230d25d82142d5af503cee907a5c67d257b0eddad50d2823259f3ba8b46fbb17a9e10cb3a44c4adabb133a65fcf
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-image-super-resolution-0001/FP32/text-image-super-resolution-0001.xml
+  - name: FP32/text-image-super-resolution-0001.bin
+    size: 10836
+    checksum: 68c2c605050eb3bee251c930797c96b88abf4d32b511cdee0a5364582a2aa898c13410edc9e4320467800ef0007974ce
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-image-super-resolution-0001/FP32/text-image-super-resolution-0001.bin
+  - name: FP16/text-image-super-resolution-0001.xml
+    size: 14935
+    checksum: 4e8fa0aa5133d08391497155efac05b33d5aa154902e23cad1c1c0b9f6e915b7c77d470a9b4e15d37dc18267eee08c8b
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-image-super-resolution-0001/FP16/text-image-super-resolution-0001.xml
+  - name: FP16/text-image-super-resolution-0001.bin
+    size: 5418
+    checksum: 3403c611e626cf9e647f0cc7674e5379129af4385c4fe747cec9556fbb114708a7a6793a321e2d072a7e3cd4c0190cb7
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-image-super-resolution-0001/FP16/text-image-super-resolution-0001.bin
+  - name: FP16-INT8/text-image-super-resolution-0001.xml
+    size: 28454
+    checksum: be54629ba35a5964174fdf3e6e9ca7b2322a0ffa95a5f9943cc165169161df88407508f59343520d7dfcce259580c0d3
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-image-super-resolution-0001/FP16-INT8/text-image-super-resolution-0001.xml
+  - name: FP16-INT8/text-image-super-resolution-0001.bin
+    size: 2958
+    checksum: 529ceef6817ddd0e753d30463235eb64ebdc371cf443249015edf8ad85934f61dca29c767101d03a0596c5a8ea12811f
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/text-image-super-resolution-0001/FP16-INT8/text-image-super-resolution-0001.bin
+input_info:
+  - name: '0'
+    shape: [1, 1, 360, 640]
+    layout: NCHW
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE

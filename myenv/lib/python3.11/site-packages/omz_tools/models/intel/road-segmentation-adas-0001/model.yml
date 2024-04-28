@@ -1,0 +1,49 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  Multiclass (BG -  road -  curbs -  marks) segmentation based on ENET -  using depthwise
+  convolutions and without ELU operations and without concatenation
+task_type: semantic_segmentation
+files:
+  - name: FP32/road-segmentation-adas-0001.xml
+    size: 398315
+    checksum: 76248abe41e6cc1e4286c21d1d2447a73d29dc86d7343056d37dccefccee65793ab7b3a9bfeda4f17c89c2978112e1ee
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/road-segmentation-adas-0001/FP32/road-segmentation-adas-0001.xml
+  - name: FP32/road-segmentation-adas-0001.bin
+    size: 737184
+    checksum: 00391dd817115d2b076cade11062a4ff8c70659eb629d30b4babae3b6888f7c180e7ef306e8e5f14fde33f0bb23e1207
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/road-segmentation-adas-0001/FP32/road-segmentation-adas-0001.bin
+  - name: FP16/road-segmentation-adas-0001.xml
+    size: 554615
+    checksum: 5e50ee68aea37a06435bf6159b586c5059e2673281c020588fa78bd9f160bad8cfb5aad50c9161b8e20925440d15cfa5
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/road-segmentation-adas-0001/FP16/road-segmentation-adas-0001.xml
+  - name: FP16/road-segmentation-adas-0001.bin
+    size: 368616
+    checksum: 8ca68eb984166af6f99fde64e5e204a21c970061eb149196438c359b70e87abe0d75bc239801e9449027b3c406e19a75
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/road-segmentation-adas-0001/FP16/road-segmentation-adas-0001.bin
+  - name: FP16-INT8/road-segmentation-adas-0001.xml
+    size: 1056103
+    checksum: b652d74f5902b7530421990627a262c42f397336e281f3d778ab7e1b4e1e85754a9d3045b0a2fbea8466a60c633fe98f
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/road-segmentation-adas-0001/FP16-INT8/road-segmentation-adas-0001.xml
+  - name: FP16-INT8/road-segmentation-adas-0001.bin
+    size: 215040
+    checksum: 8d3a12b216491bd00369b11b47c9ead9bec7325879dfbc27e0becc3c1a5f589573f97643535003a06b7281f2accae5f7
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/road-segmentation-adas-0001/FP16-INT8/road-segmentation-adas-0001.bin
+input_info:
+  - name: data
+    shape: [1, 3, 512, 896]
+    layout: NCHW
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE

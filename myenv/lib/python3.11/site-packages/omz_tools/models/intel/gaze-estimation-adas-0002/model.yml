@@ -1,0 +1,54 @@
+# Copyright (c) 2023-2024 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+description: >-
+  Gaze estimation for ADAS
+task_type: object_attributes
+files:
+  - name: FP32/gaze-estimation-adas-0002.xml
+    size: 68724
+    checksum: 2c70fa1448aa923869b96848f1d218ac2efab5f718a57b486d7256c46853726fde71e3165398458e973200612e17529c
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002.xml
+  - name: FP32/gaze-estimation-adas-0002.bin
+    size: 7529380
+    checksum: 044e39075331a7e5b3a7da7a39ccc40defda03326375295aa091b273e7395b3ab92db076d7828b9a68795fd496b572c8
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002.bin
+  - name: FP16/gaze-estimation-adas-0002.xml
+    size: 99255
+    checksum: 840d76c3bc0693f5d10966dfa7cac193519227bfe4762d12d124f24395e3490bf54ec409a09c1e4f962e53900d8b6a14
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002.xml
+  - name: FP16/gaze-estimation-adas-0002.bin
+    size: 3764742
+    checksum: 6b54573b16ef8a3ca0acf53b26a35215eba250024677081b37fa531a79b69d2dceb4d25dfd863439383e002f2162c81f
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002.bin
+  - name: FP16-INT8/gaze-estimation-adas-0002.xml
+    size: 148512
+    checksum: dedff475bf9a46fe58490fda20fecb35b9e84c473b18715863659f9e3f63a37750915f0f43984199f735c18a65ea78e0
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/gaze-estimation-adas-0002/FP16-INT8/gaze-estimation-adas-0002.xml
+  - name: FP16-INT8/gaze-estimation-adas-0002.bin
+    size: 1893354
+    checksum: 85f236186cc6d851a7db3682daaf89a10d5e7aeee40127605f99154d15dfd983bca38e26bfe84748b0b2f5562bc8f53d
+    source: https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/gaze-estimation-adas-0002/FP16-INT8/gaze-estimation-adas-0002.bin
+input_info:
+  - name: left_eye_image
+    shape: [1, 3, 60, 60]
+    layout: NCHW
+  - name: right_eye_image
+    shape: [1, 3, 60, 60]
+    layout: NCHW
+  - name: head_pose_angles
+    shape: [1, 3]
+    layout: NC
+framework: dldt
+license: https://raw.githubusercontent.com/openvinotoolkit/open_model_zoo/master/LICENSE
