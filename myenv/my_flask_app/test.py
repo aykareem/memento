@@ -1,4 +1,3 @@
-import openvino as ov
-ie = ov.Core()
-# List all methods and attributes for the OpenVINO core
-print(dir(ie))
+import os
+if not os.path.exists(".../intel/face-detection-adas-0001/FP16/face-detection-adas-0001.xml"):
+    raise FileNotFoundError("Model file not found")
