@@ -9,14 +9,14 @@ ie = ov.Core()
 
 
 face_detection_model_path = "../intel/face-detection-adas-0001/FP16/face-detection-adas-0001.xml"
-model = ie.read_model(model=face_detection_model_path)
-compiled_model = ie.compile_model(model, "CPU")
+face_detection_model = ie.read_model(model=face_detection_model_path)
+face_detection_compiled_model = ie.compile_model(face_detection_model, "CPU")
 
 
 # Load the face re-identification model
 face_reid_model_path = "../intel/face-reidentification-retail-0095/FP16/face-reidentification-retail-0095.xml"
-model = ie.read_model(model=face_reid_model_path)
-compiled_model = ie.compile_model(model, "CPU")
+face_reid_model = ie.read_model(model=face_reid_model_path)
+face_reid_compiled_model = ie.compile_model(face_reid_model, "CPU")
 
 def detect_faces(image):
     # Convert the image to a compatible format
