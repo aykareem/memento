@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055D5E6A2BDDDA0200142461 /* MomentoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D5E692BDDDA0200142461 /* MomentoApp.swift */; };
+		055D5E6C2BDDDA0200142461 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D5E6B2BDDDA0200142461 /* ContentView.swift */; };
+		055D5E6E2BDDDA0300142461 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055D5E6D2BDDDA0300142461 /* Assets.xcassets */; };
+		055D5E712BDDDA0300142461 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055D5E702BDDDA0300142461 /* Preview Assets.xcassets */; };
+		055D5E7B2BDDDA0300142461 /* MomentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D5E7A2BDDDA0300142461 /* MomentoTests.swift */; };
+		055D5E852BDDDA0300142461 /* MomentoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D5E842BDDDA0300142461 /* MomentoUITests.swift */; };
+		055D5E872BDDDA0300142461 /* MomentoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D5E862BDDDA0300142461 /* MomentoUITestsLaunchTests.swift */; };
+		055D5E952BDDDDD600142461 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D5E942BDDDDD600142461 /* CameraView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		055D5E772BDDDA0300142461 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055D5E5E2BDDDA0200142461 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055D5E652BDDDA0200142461;
+			remoteInfo = Momento;
+		};
+		055D5E812BDDDA0300142461 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055D5E5E2BDDDA0200142461 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055D5E652BDDDA0200142461;
+			remoteInfo = Momento;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		055D5E662BDDDA0200142461 /* Momento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momento.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		055D5E692BDDDA0200142461 /* MomentoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoApp.swift; sourceTree = "<group>"; };
+		055D5E6B2BDDDA0200142461 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		055D5E6D2BDDDA0300142461 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		055D5E702BDDDA0300142461 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		055D5E762BDDDA0300142461 /* MomentoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomentoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		055D5E7A2BDDDA0300142461 /* MomentoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoTests.swift; sourceTree = "<group>"; };
+		055D5E802BDDDA0300142461 /* MomentoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomentoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		055D5E842BDDDA0300142461 /* MomentoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoUITests.swift; sourceTree = "<group>"; };
+		055D5E862BDDDA0300142461 /* MomentoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		055D5E932BDDDD2E00142461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		055D5E942BDDDDD600142461 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		055D5E632BDDDA0200142461 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D5E732BDDDA0300142461 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D5E7D2BDDDA0300142461 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		055D5E5D2BDDDA0200142461 = {
+			isa = PBXGroup;
+			children = (
+				055D5E682BDDDA0200142461 /* Momento */,
+				055D5E792BDDDA0300142461 /* MomentoTests */,
+				055D5E832BDDDA0300142461 /* MomentoUITests */,
+				055D5E672BDDDA0200142461 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		055D5E672BDDDA0200142461 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				055D5E662BDDDA0200142461 /* Momento.app */,
+				055D5E762BDDDA0300142461 /* MomentoTests.xctest */,
+				055D5E802BDDDA0300142461 /* MomentoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		055D5E682BDDDA0200142461 /* Momento */ = {
+			isa = PBXGroup;
+			children = (
+				055D5E932BDDDD2E00142461 /* Info.plist */,
+				055D5E942BDDDDD600142461 /* CameraView.swift */,
+				055D5E692BDDDA0200142461 /* MomentoApp.swift */,
+				055D5E6B2BDDDA0200142461 /* ContentView.swift */,
+				055D5E6D2BDDDA0300142461 /* Assets.xcassets */,
+				055D5E6F2BDDDA0300142461 /* Preview Content */,
+			);
+			path = Momento;
+			sourceTree = "<group>";
+		};
+		055D5E6F2BDDDA0300142461 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				055D5E702BDDDA0300142461 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		055D5E792BDDDA0300142461 /* MomentoTests */ = {
+			isa = PBXGroup;
+			children = (
+				055D5E7A2BDDDA0300142461 /* MomentoTests.swift */,
+			);
+			path = MomentoTests;
+			sourceTree = "<group>";
+		};
+		055D5E832BDDDA0300142461 /* MomentoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				055D5E842BDDDA0300142461 /* MomentoUITests.swift */,
+				055D5E862BDDDA0300142461 /* MomentoUITestsLaunchTests.swift */,
+			);
+			path = MomentoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		055D5E652BDDDA0200142461 /* Momento */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055D5E8A2BDDDA0300142461 /* Build configuration list for PBXNativeTarget "Momento" */;
+			buildPhases = (
+				055D5E622BDDDA0200142461 /* Sources */,
+				055D5E632BDDDA0200142461 /* Frameworks */,
+				055D5E642BDDDA0200142461 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Momento;
+			productName = Momento;
+			productReference = 055D5E662BDDDA0200142461 /* Momento.app */;
+			productType = "com.apple.product-type.application";
+		};
+		055D5E752BDDDA0300142461 /* MomentoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055D5E8D2BDDDA0300142461 /* Build configuration list for PBXNativeTarget "MomentoTests" */;
+			buildPhases = (
+				055D5E722BDDDA0300142461 /* Sources */,
+				055D5E732BDDDA0300142461 /* Frameworks */,
+				055D5E742BDDDA0300142461 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				055D5E782BDDDA0300142461 /* PBXTargetDependency */,
+			);
+			name = MomentoTests;
+			productName = MomentoTests;
+			productReference = 055D5E762BDDDA0300142461 /* MomentoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		055D5E7F2BDDDA0300142461 /* MomentoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055D5E902BDDDA0300142461 /* Build configuration list for PBXNativeTarget "MomentoUITests" */;
+			buildPhases = (
+				055D5E7C2BDDDA0300142461 /* Sources */,
+				055D5E7D2BDDDA0300142461 /* Frameworks */,
+				055D5E7E2BDDDA0300142461 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				055D5E822BDDDA0300142461 /* PBXTargetDependency */,
+			);
+			name = MomentoUITests;
+			productName = MomentoUITests;
+			productReference = 055D5E802BDDDA0300142461 /* MomentoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		055D5E5E2BDDDA0200142461 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					055D5E652BDDDA0200142461 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					055D5E752BDDDA0300142461 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 055D5E652BDDDA0200142461;
+					};
+					055D5E7F2BDDDA0300142461 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 055D5E652BDDDA0200142461;
+					};
+				};
+			};
+			buildConfigurationList = 055D5E612BDDDA0200142461 /* Build configuration list for PBXProject "Momento" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 055D5E5D2BDDDA0200142461;
+			productRefGroup = 055D5E672BDDDA0200142461 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				055D5E652BDDDA0200142461 /* Momento */,
+				055D5E752BDDDA0300142461 /* MomentoTests */,
+				055D5E7F2BDDDA0300142461 /* MomentoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		055D5E642BDDDA0200142461 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D5E712BDDDA0300142461 /* Preview Assets.xcassets in Resources */,
+				055D5E6E2BDDDA0300142461 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D5E742BDDDA0300142461 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D5E7E2BDDDA0300142461 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		055D5E622BDDDA0200142461 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D5E952BDDDDD600142461 /* CameraView.swift in Sources */,
+				055D5E6C2BDDDA0200142461 /* ContentView.swift in Sources */,
+				055D5E6A2BDDDA0200142461 /* MomentoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D5E722BDDDA0300142461 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D5E7B2BDDDA0300142461 /* MomentoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055D5E7C2BDDDA0300142461 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055D5E872BDDDA0300142461 /* MomentoUITestsLaunchTests.swift in Sources */,
+				055D5E852BDDDA0300142461 /* MomentoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		055D5E782BDDDA0300142461 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055D5E652BDDDA0200142461 /* Momento */;
+			targetProxy = 055D5E772BDDDA0300142461 /* PBXContainerItemProxy */;
+		};
+		055D5E822BDDDA0300142461 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055D5E652BDDDA0200142461 /* Momento */;
+			targetProxy = 055D5E812BDDDA0300142461 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		055D5E882BDDDA0300142461 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		055D5E892BDDDA0300142461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		055D5E8B2BDDDA0300142461 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Momento/Preview Content\"";
+				DEVELOPMENT_TEAM = 2TJ4F5HJV8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Momento/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.Momento";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		055D5E8C2BDDDA0300142461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Momento/Preview Content\"";
+				DEVELOPMENT_TEAM = 2TJ4F5HJV8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Momento/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.Momento";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		055D5E8E2BDDDA0300142461 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2TJ4F5HJV8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.MomentoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Momento.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Momento";
+			};
+			name = Debug;
+		};
+		055D5E8F2BDDDA0300142461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2TJ4F5HJV8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.MomentoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Momento.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Momento";
+			};
+			name = Release;
+		};
+		055D5E912BDDDA0300142461 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2TJ4F5HJV8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.MomentoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Momento;
+			};
+			name = Debug;
+		};
+		055D5E922BDDDA0300142461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2TJ4F5HJV8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "UC-Davis.MomentoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Momento;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		055D5E612BDDDA0200142461 /* Build configuration list for PBXProject "Momento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055D5E882BDDDA0300142461 /* Debug */,
+				055D5E892BDDDA0300142461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055D5E8A2BDDDA0300142461 /* Build configuration list for PBXNativeTarget "Momento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055D5E8B2BDDDA0300142461 /* Debug */,
+				055D5E8C2BDDDA0300142461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055D5E8D2BDDDA0300142461 /* Build configuration list for PBXNativeTarget "MomentoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055D5E8E2BDDDA0300142461 /* Debug */,
+				055D5E8F2BDDDA0300142461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055D5E902BDDDA0300142461 /* Build configuration list for PBXNativeTarget "MomentoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055D5E912BDDDA0300142461 /* Debug */,
+				055D5E922BDDDA0300142461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 055D5E5E2BDDDA0200142461 /* Project object */;
+}
