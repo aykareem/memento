@@ -4,6 +4,8 @@ import requests
 from PIL import Image  # For image manipulation
 import openvino as ov
 from io import BytesIO
+from scipy.spatial.distance import cosine
+
 
 
 # OpenVINO Core
@@ -20,6 +22,8 @@ output_layer_ir = face_detection_compiled_model.output(0)
 face_reid_model_path = "../intel/face-reidentification-retail-0095/FP32/face-reidentification-retail-0095.xml"
 face_reid_model = core.read_model(model = face_reid_model_path)
 face_reid_compiled_model = core.compile_model(model = face_reid_model, device_name = "CPU")
+
+
 # Download image from a URL
 def download_image_from_url(url):
     response = requests.get(url)
@@ -48,67 +52,36 @@ def detect_faces(image_url, compiled_model):
 
 # Detect and compare two faces
 def detect_and_compare_faces(image_url1, image_url2, fd_compiled_model, fr_compiled_model):
-    # Download and process both images
-    image1, image1_w, image1_h = download_image_from_url(image_url1)
-    image2, image2_w, image2_h = download_image_from_url(image_url2)
-    new_image1 = np.squeeze(image1)
-    new_image2 = np.squeeze(image2)
-    new_image1 = image1.transpose(1, 2, 0)
-    new_image2 = image2.transpose(1, 2, 0)
+    # Download and preprocess the images
+    image1, width1, height1 = download_image_from_url(image_url1)
+    image2, width2, height2 = download_image_from_url(image_url2)
 
-    image1_rgb = new_image1[:, :, ::-1]
-    image2_rgb = new_image2[:, :, ::-1]
-
-    
     # Detect faces in both images
-    faces1 = detect_faces(image_url1, fd_compiled_model)
-    faces2 = detect_faces(image_url2, fd_compiled_model)
-    # Verify image dimensions and data type
+    face1_box = detect_faces(image_url1, fd_compiled_model)
+    face2_box = detect_faces(image_url2, fd_compiled_model)
 
-    
-    #if not faces1 or not faces2:
-        #raise ValueError("Could not detect faces in one or both images")
-    
-    # Convert OpenCV to PIL for cropping
-    # Check the shape and data type
-    print("Shape of image1:", image1.shape)
-    print("Data type of image1:", image1.dtype)
+    # Extract coordinates for cropping
+    x1, y1, x2, y2 = face1_box.astype(int)
+    x3, y3, x4, y4 = face2_box.astype(int)
 
-    pil_image1 = Image.fromarray(image1_rgb)
-    pil_image2 = Image.fromarray(image2_rgb)
+    # Crop the faces from the images, ensuring correct dimension handling
+    # Since these are color images, assume 3D with (Height, Width, Channels)
+    cropped_face1 = image1[:, y1:y2, x1:x2]  # (Height, Width, Channels)
+    cropped_face2 = image2[:, y3:y4, x3:x4]  # (Height, Width, Channels)
 
-    
-    print(pil_image1.size, pil_image1.mode)
+    # Adjusting for OpenVINO input requirements (needs batch size)
+    batch_cropped_face1 = np.expand_dims(cropped_face1.transpose(2, 0, 1), axis=0)
+    batch_cropped_face2 = np.expand_dims(cropped_face2.transpose(2, 0, 1), axis=0)
 
-    # Extract faces for re-identification
-    print(faces1[0])
-    face1 = pil_image1.crop(faces1)
-    face2 = pil_image2.crop(faces2)
-    
-    print(face1.size, face1.mode)  # Check the size and mode of the image
+    # Generate face embeddings with reidentification model
+    embedding1 = fr_compiled_model([batch_cropped_face1])[0]
+    embedding2 = fr_compiled_model([batch_cropped_face2])[0]
 
+    # Calculate similarity
+    similarity = 1 - cosine(embedding1.flatten(), embedding2.flatten())
 
-    # Prepare data for re-identification
-    #face1_data = np.array(face1).transpose(2, 0, 1).astype(np.float32)  # Correct shape
-    #face2_data = np.array(face2).transpose(2, 0, 1).astype(np.float32)
-    
-    # Re-identification inference
-    reid_input_blob = next(iter(fr_compiled_model.inputs))
-    
-    infer_request1 = fr_compiled_model.create_infer_request()
-    infer_request1.set_input_tensor(ov.Tensor(face1))
-    infer_request1.start_async()
-    infer_request1.wait()
-    reid_result1 = infer_request1.get_output_tensor().data
-    
-    infer_request2 = fr_compiled_model.create_infer_request()
-    infer_request2.set_input_tensor(ov.Tensor(face2))
-    infer_request2.start_async()
-    infer_request2.wait()
-    reid_result2 = infer_request2.get_output_tensor().data
+    return similarity
 
-    matching_score = np.dot(reid_result1.flatten(), reid_result2.flatten())
-    return matching_score  # Return the score
 
 
 
