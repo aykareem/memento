@@ -23,6 +23,20 @@ face_reid_model_path = "../intel/face-reidentification-retail-0095/FP32/face-rei
 face_reid_model = core.read_model(model = face_reid_model_path)
 face_reid_compiled_model = core.compile_model(model = face_reid_model, device_name = "CPU")
 
+# Validate and correct the URL if needed
+def validate_url(url):
+    if not (url.startswith("http://") or url.startswith("https://")):
+        # If there's no schema, prepend "https://" by default
+        url = "https://" + url
+    return url
+
+# Example usage with corrected URL
+def download_image_from_url(url):
+    corrected_url = validate_url(url)  # Ensure the URL has the correct schema
+    response = requests.get(corrected_url)  # Send a GET request to download the image
+    response.raise_for_status()  # Check if the request was successful
+    return response.content  # Return the raw content of the response
+
 
 # Download image from a URL
 def download_image_from_url(url):
@@ -76,8 +90,8 @@ def detect_and_compare_faces(image_url1, image_url2, fd_compiled_model, fr_compi
     # Crop the faces from the images
     face1 = image1[y1:y2, x1:x2]  # Adjusted shape for OpenVINO model input
     face2 = image2[y3:y4, x3:x4]  # Adjusted shape for OpenVINO model input
-    print(face1.size)
-    print(face2.size)
+    #print(face1.size)
+    #print(face2.size)
 
     # Resize the faces to 128x128
     resized_face1 = cv2.resize(face1, (128, 128))

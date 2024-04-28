@@ -8,22 +8,28 @@ def initialize_firebase(json_path):
     firebase_admin.initialize_app(cred)
 
 def setup_firestore_listener(collection_name):
-    """Set up a Firestore listener that returns a dictionary with names and image URLs."""
+    """Set up a Firestore listener that returns a dictionary with names and a list of image URLs."""
     db = firestore.client()
-    contacts_photos_dict = {}  # Dictionary to hold names and image URLs
+    contacts_photos_dict = {}  # Dictionary to hold names and a list of image URLs
 
     # Callback function for snapshot events
     def on_snapshot(col_snapshot, changes, read_time):
         for change in changes:
             doc = change.document.to_dict()
             name = doc.get("name", "Unknown")
-            photo_urls = doc.get("photoURLs", [])
-            photo_url = photo_urls[0] if photo_urls else "No photo"
+            photo_urls = doc.get("photoURLs", [])  # Get the list of photo URLs
 
             if change.type.name in ("ADDED", "MODIFIED"):
-                contacts_photos_dict[name] = photo_url
+                if name not in contacts_photos_dict:
+                    contacts_photos_dict[name] = []
+                contacts_photos_dict[name].extend(photo_urls)  # Add photo URLs to the list
             elif change.type.name == "REMOVED":
-                contacts_photos_dict.pop(name, None)
+                if name in contacts_photos_dict:
+                    for url in photo_urls:
+                        if url in contacts_photos_dict[name]:
+                            contacts_photos_dict[name].remove(url)  # Remove the specific photo URL
+                    if not contacts_photos_dict[name]:  # If list is empty, remove the key
+                        contacts_photos_dict.pop(name, None)
 
     # Attach the listener to the specified collection
     col_reference = db.collection(collection_name)
@@ -54,6 +60,7 @@ if __name__ == "__main__":
     contacts_photos_dict = stop_listener()
     print("Stopped listening. Final state of contacts photos dictionary:")
     print(contacts_photos_dict)
+
 
 
 
