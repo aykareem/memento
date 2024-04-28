@@ -26,15 +26,26 @@ face_reid_compiled_model = core.compile_model(model = face_reid_model, device_na
 
 # Download image from a URL
 def download_image_from_url(url):
-    response = requests.get(url)
-    response.raise_for_status()
+    response = requests.get(url)  # Send a GET request to download the image
+    response.raise_for_status()  # Ensure the download was successful
+    
+    # Convert the response content to a numpy array and decode into an OpenCV image
     image_array = np.asarray(bytearray(response.content), dtype=np.uint8)
-    image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
+    image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)  # Read as a color image
+    
+    # Get the expected input shape for your model
     input_layer = face_detection_compiled_model.input(0)
-    height, width = image.shape[0:2]
-    N, C, H, W = input_layer.shape
-    resized_image = cv2.resize(image, (W, H))
-    input_image = np.expand_dims(resized_image.transpose(2,0,1),0)
+    N, C, H, W = input_layer.shape  # The expected shape (batch, channels, height, width)
+    
+    # Resize the image to fit the model's expected shape
+    resized_image = cv2.resize(image, (W, H))  # Resize to the expected dimensions
+    
+    # Adjust the shape to match the model's input requirements (transpose and add batch dimension)
+    input_image = np.expand_dims(resized_image.transpose(2, 0, 1), 0)  # (1, channels, height, width)
+    
+    # Get the width and height of the original image
+    height, width = image.shape[:2]
+
     return input_image, width, height, image
 
 # Correctly resize and reshape the image
@@ -92,8 +103,8 @@ def detect_and_compare_faces(image_url1, image_url2, fd_compiled_model, fr_compi
 
 # Test with image URLs
 matching_score = detect_and_compare_faces(
-    "https://m.media-amazon.com/images/M/MV5BZjhkMzgzZGEtYjQ1Yi00NWUxLTk5NWMtNWY5MThjODRlMDczXkEyXkFqcGdeQXVyMTExNzQ3MzAw._V1_.jpg",
-    "https://m.media-amazon.com/images/M/MV5BODdmMTE4OWEtMWM0ZC00MDRlLWE4YjYtYWI3ZGEyZmU5MGE3XkEyXkFqcGdeQXVyMTMyNzI3NzIy._V1_.jpg",
+    "https://firebasestorage.googleapis.com/v0/b/momento-49924.appspot.com/o/images%2FA341E669-2A16-4D8F-9EA3-C5A5D40FB111.jpg?alt=media&token=875033fb-26eb-42df-86a6-3eab135f2643",
+    "https://firebasestorage.googleapis.com/v0/b/momento-49924.appspot.com/o/images%2F75138553-7570-46B2-96B1-71B70830C41C.jpg?alt=media&token=dc97232a-0ce9-4ca6-9f54-235abf3f9869",
     face_detection_compiled_model,
     face_reid_compiled_model
 )
